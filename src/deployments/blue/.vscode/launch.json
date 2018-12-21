@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "protocol": "inspector",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "BuyBit-Dev",
+        "program": "${workspaceRoot}\\server\\index.js"
+      }
+    ]
+}
