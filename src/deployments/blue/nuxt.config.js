@@ -1,5 +1,6 @@
 const pkg = require('./package')
 const webpack = require('webpack')
+let NODE_BASEURL = 'http://192.168.9.232', NODE_IMGSERVERURL = 'http://192.168.9.236:8999/', NODE_WEBSOCKETURL = 'ws://192.168.9.232:8082', NODE_WEBSOCKETHTTPURL = 'http://192.168.9.232:8082';
 // const HappyPack = require('happypack')
 // const os = require('os')
 // const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length })
@@ -20,20 +21,16 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/buybit.ico' },
     ],
-    // script: [
+    // script: 
     //   { src: 'https://s13.cnzz.com/z_stat.php?id=1273759983&web_id=1273759983' }
     // ],
   },
 
   env: {
-    baseUrl: process.env.NODE_ENV === 'production' ? 'https://www.buybit.com' : process.env.NODE_ENV === 'testing' ? 'https://192.168.9.236' : 'http://192.168.9.232',// api接口ip地址
-    imgServerUrl: process.env.NODE_ENV === 'production' ? 'https://image.buybit.com/' : process.env.NODE_ENV === 'testing' ? 'http://192.168.9.236:8999/' : 'http://192.168.9.236:8999/',// 图片的服务器地址 正式线上图片地址image.buybit.com
-    webSocketUrl: process.env.NODE_ENV === 'production' ? 'wss://www.buybit.com' : process.env.NODE_ENV === 'testing' ? 'wss://192.168.9.236:442' : 'ws://192.168.9.232:8082',// socket ws接口ip地址
-    webSocketHttpUrl: process.env.NODE_ENV === 'production' ? 'https://www.buybit.com' : process.env.NODE_ENV === 'testing' ? 'https://192.168.9.236:442' : 'http://192.168.9.232:8082',// socket api接口ip地址
-    // baseUrl: process.env.NODE_ENV === 'production' ? 'https://www.buybit.com' : 'http://192.168.9.232',
-    // imgServerUrl: process.env.NODE_ENV === 'production' ? 'https://image.buybit.com/' : 'http://192.168.9.236:8999',// 图片的服务器地址 正式线上图片地址image.buybit.com
-    // webSocketUrl: process.env.NODE_ENV === 'production' ? 'wss://www.buybit.com' : 'ws://192.168.9.232:8082',
-    // webSocketHttpUrl: process.env.NODE_ENV === 'production' ? 'https://www.buybit.com' : 'http://192.168.9.232:8082'
+    baseUrl: NODE_BASEURL,// api接口ip地址
+    imgServerUrl: NODE_IMGSERVERURL,// 图片的服务器地址 正式线上图片地址image.buybit.com
+    webSocketUrl: NODE_WEBSOCKETURL,// socket ws接口ip地址
+    webSocketHttpUrl: NODE_WEBSOCKETHTTPURL,// socket api接口ip地址
   },
 
   /*
